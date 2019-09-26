@@ -14,18 +14,18 @@ $ openssl rsa -in privateKey.pem -pubout -out publicKey.pem
 From there you can either read the PEM file in via:
 
 
-RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPemFile('FileName.PEM')
+            RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPemFile('FileName.PEM')
 
 -or-
 
-RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPem(strPrivateKey)
+            RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPem(strPrivateKey)
 
 
 
 Full example:
 
 
-var payload = new Dictionary<string, object>
+            var payload = new Dictionary<string, object>
             {
                 { "sub", subValue },
                 { "iss", issValue },
@@ -39,8 +39,8 @@ var payload = new Dictionary<string, object>
                 { "typ", "JWT" }
             };
 
-RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPem(KeyHandler.privateKey);
-string token = JWT.Encode(payload, rsaCrypto, JwsAlgorithm.RS256, extraHeaders: header);
+            RSACryptoServiceProvider rsaCrypto = PemHelper.GetRSAProviderFromPem(KeyHandler.privateKey);
+            string token = JWT.Encode(payload, rsaCrypto, JwsAlgorithm.RS256, extraHeaders: header);
 
 
 Hope this helps someone out. It's relatively straight forward but took me a long time to get it to work properly, so I figured I'd make this repository public.
