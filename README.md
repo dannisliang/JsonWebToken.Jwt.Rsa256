@@ -1,7 +1,7 @@
 # JsonWebToken.Jwt.Rsa256
 Generate a Json Web Token (JWT) from a OpenSSL generated RSA256 private key
 
-This application will help you generate a JSON Web Token (JWT) from a OpenSSL generated RSA256 key using BouncyCastle.
+This application will help you generate a JSON Web Token (JWT) from a OpenSSL generated RSA256 key using BouncyCastle in C#.
 
 
 To generate a private key from OpenSSL execute the following commands:
